@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>I'm Sorry ❤️</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: #ffe6eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page {
+    display: none;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .active {
+    display: block;
+  }
+
+  img {
+    width: 220px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    color: #ff3f6c;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  button {
+    padding: 10px 22px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #ff3f6c;
+    color: white;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  button:hover {
+    background: #e6335d;
+  }
+
+  #noBtn {
+    position: absolute;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <img src="sorry.png">
+  <h1>I'm Really Sorry 😔</h1>
+  <p>Please thoda sa time de do</p>
+  <button onclick="nextPage(2)">Next</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <img src="sorry.png">
+  <h1>Maaf Kar Dogi? 🥺</h1>
+  <p>Main sach me regret karta hoon</p>
+  <button onclick="nextPage(3)">Yes</button>
+  <button id="noBtn">No</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <img src="sorry.png">
+  <h1>Ek Last Chance 💔</h1>
+  <p>Tum bahut important ho mere liye</p>
+  <button onclick="nextPage(4)">Next</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <img src="sorry.png">
+  <h1>Thank You ❤️</h1>
+  <p>Bas itna hi kehna tha</p>
+</div>
+
+<script>
+  function nextPage(n) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById("page" + n).classList.add('active');
+  }
+
+  const noBtn = document.getElementById("noBtn");
+
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+  });
+</script>
+
+</body>
+</html>
